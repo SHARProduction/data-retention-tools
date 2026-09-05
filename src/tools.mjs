@@ -1,0 +1,5 @@
+export const evaluators={
+  'production-data-retention-planner': i=>{const start=Date.parse(i.startDate),rows=(i.classes||[]).map(x=>{const end=new Date(start+Number(x.retentionDays)*864e5),review=new Date(end-Number(x.reviewBeforeDays||0)*864e5);return{...x,deleteAfter:end.toISOString().slice(0,10),reviewOn:review.toISOString().slice(0,10)}});return{valid:Number.isFinite(start)&&rows.length>0&&rows.every(x=>Number(x.retentionDays)>=0),rows}},
+  'privacy-deletion-request-tracker': i=>{const today=Date.parse(i.today),rows=(i.requests||[]).map(x=>{const due=Date.parse(x.received)+Number(x.deadlineDays)*864e5,overdue=x.status!=='completed'&&today>due;return{...x,due:new Date(due).toISOString().slice(0,10),overdue,evidenceComplete:x.status!=='completed'||Boolean(x.evidence)}});return{valid:Number.isFinite(today)&&rows.length>0&&rows.every(x=>!x.overdue&&x.evidenceComplete),rows}}
+};
+export function evaluate(slug,input){const fn=evaluators[slug];if(!fn)throw new Error('Unknown tool');return fn(input)}

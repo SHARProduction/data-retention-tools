@@ -1,0 +1,10 @@
+{
+  "startDate": "2026-09-06",
+  "classes": [
+    {
+      "name": "raw-footage",
+      "retentionDays": 365,
+      "reviewBeforeDays": 30
+    }
+  ]
+}

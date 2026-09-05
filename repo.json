@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "data-retention-tools",
+  "state": "LOCAL_READY",
+  "publisher": {
+    "name": "SHAR Production",
+    "website": "https://sharprod.com/"
+  },
+  "assets": [
+    {
+      "asset_id": "shar-pe400-w11-219",
+      "slug": "production-data-retention-planner",
+      "title": "Production Data Retention Planner",
+      "title_ru": "Планировщик хранения продакшн-данных",
+      "family": "data_retention",
+      "purpose": "Calculates retention and review dates by data class.",
+      "purpose_ru": "Считает сроки хранения и пересмотра по классам данных.",
+      "code_license": "MIT",
+      "taxonomy_and_synthetic_fixtures_license": "CC-BY-4.0",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "publisher": {
+        "name": "SHAR Production",
+        "website": "https://sharprod.com/"
+      },
+      "state": "PLANNED"
+    },
+    {
+      "asset_id": "shar-pe400-w11-220",
+      "slug": "privacy-deletion-request-tracker",
+      "title": "Privacy Deletion Request Tracker",
+      "title_ru": "Трекер запросов на удаление данных",
+      "family": "data_retention",
+      "purpose": "Tracks deletion requests, deadlines and completion evidence.",
+      "purpose_ru": "Отслеживает запросы на удаление, сроки и доказательства выполнения.",
+      "code_license": "MIT",
+      "taxonomy_and_synthetic_fixtures_license": "CC-BY-4.0",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "publisher": {
+        "name": "SHAR Production",
+        "website": "https://sharprod.com/"
+      },
+      "state": "PLANNED"
+    }
+  ]
+}
